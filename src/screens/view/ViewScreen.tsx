@@ -16,20 +16,24 @@ const ViewScreen = () => {
       register.id = index;
     });
   };
+
   let average: string = "(";
   let averageValue: number = 0;
+
   registeredData.forEach((register, index) => {
     average +=
       index < registeredData.length - 1
         ? ` ${register.age} +`
         : ` ${register.age}`;
+
     averageValue += register.age;
+    console.log(averageValue);
   });
   if (registeredData.length > 0) {
     average += ` ) / ${registeredData.length}= ${
       averageValue / registeredData.length
     }`;
-  } else average = "Não há cadastraos";
+  } else average = "Não há usuários cadastrados";
   return (
     <div>
       <div className={styles.options}>

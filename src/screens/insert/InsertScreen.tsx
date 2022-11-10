@@ -14,7 +14,7 @@ const InsertScreen = () => {
     // console.log(form[0].value);
     registeredData.push({
       name: form[0].value,
-      age: form[1].value,
+      age: parseInt(form[1].value),
       profession: form[2].value,
       email: form[3].value,
       phone: form[4].value,
