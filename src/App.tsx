@@ -1,25 +1,34 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import "./App.css";
+import InsertScreen from "./screens/insert/InsertScreen";
+import Layout from "./layout/Layout";
+import ViewScreen from "./screens/view/ViewScreen";
+import { AppContext, IRegisterData } from "./context/registered";
 
 function App() {
+  // let test: IRegisterData[] | null = [
+  //   {
+  //     name: "string",
+  //     age: 12,
+  //     profession: "string",
+  //     email: "string",
+  //     phone: "string",
+  //     createdAt: "string",
+  //   },
+  // ];
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <AppContext.Provider value={[]}>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Layout />}>
+            <Route index element={<InsertScreen />} />
+            <Route path="/insert" element={<InsertScreen />} />
+            <Route path="/view" element={<ViewScreen />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
+    </AppContext.Provider>
   );
 }
 

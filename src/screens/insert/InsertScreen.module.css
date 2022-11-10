@@ -1,0 +1,45 @@
+.insertContainer {
+  display: flex;
+  background-color: var(--color-tertiary-hover);
+}
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  padding: 70px 10%;
+  margin: 0 auto;
+}
+.form_line {
+  display: flex;
+  flex-direction: row;
+  gap: 100px;
+  /* justify-content: space-between; */
+}
+
+label {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+input {
+  height: 40px;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.name_input {
+  width: 400px;
+}
+.email_input {
+  width: 100%;
+}
+button {
+  cursor: pointer;
+  width: 300px;
+  margin: auto;
+}
+
+.footnote {
+  font-size: 12px;
+}
